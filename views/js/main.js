@@ -453,7 +453,7 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     for (var i = 0; i < randomPizza.length; i++) {
     /*  var dx = determineDx(randomPizza[i], size);*/
-      var newwidth = randomPizza[i].style.width = newSize + "%";
+       randomPizza[i].style.width = newSize + "%";
     }
   }
 
@@ -503,9 +503,11 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
   var items = document.querySelectorAll('.mover');
+
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
 
@@ -536,7 +538,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 27; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
